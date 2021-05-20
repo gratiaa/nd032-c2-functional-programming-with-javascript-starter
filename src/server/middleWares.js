@@ -3,7 +3,7 @@ const express = require("express");
 const livereload = require("livereload");
 const connectLivereload = require("connect-livereload");
 
-const { path, env } = require("./config");
+const { path, nodeEnv } = require("./config");
 
 const connectLiveReload = (app) => {
   const liveReloadServer = livereload.createServer();
@@ -22,7 +22,7 @@ module.exports = (app) => {
   app.use(express.urlencoded({ extended: false }));
   app.use(express.json());
 
-  if (env === "dev") {
+  if (nodeEnv === "dev") {
     connectLiveReload(app);
   }
 };

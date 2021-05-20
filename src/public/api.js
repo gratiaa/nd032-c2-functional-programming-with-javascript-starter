@@ -1,6 +1,8 @@
 const API = {
   marsRover: (rover) =>
     `http://localhost:3000/mars-rover/${rover.toLowerCase()}`,
+  marsRoverPhotos: (rover, sol) =>
+    `http://localhost:3000/mars-rover/${rover.toLowerCase()}/photos?sol=${sol}`,
 };
 
 const fetchMarsRovers = async (state) =>
@@ -18,13 +20,20 @@ const fetchMarsRovers = async (state) =>
         (photo) => photo.sol === maxSol
       );
 
+      const { photos: maxSolPhotos } = await fetch(
+        API.marsRoverPhotos(name, maxSol)
+      ).then((res) => res.json());
+
       return {
         name,
         landingDate,
         launchDate,
         status,
         maxSol,
-        recentPhotos,
+        recentPhotos: {
+          meta: recentPhotos[0],
+          photos: maxSolPhotos,
+        },
       };
     })
   );
