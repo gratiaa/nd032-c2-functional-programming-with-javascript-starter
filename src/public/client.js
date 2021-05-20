@@ -27,11 +27,28 @@ const App = async (state) => {
   updateStore(store, { rovers: roversData });
 
   return `
-        <header>Udacity Project: Mars Dashboard</header>
-        <main>
-          ${Rovers(state)}
+        <header class="p-5 flex space-x-2">
+          <img class="w-7" src="./assets/images/udacity-logo.png" />
+        </header>
+        <main id="content">
+          <div class="pb-32">
+            <h1 class="text-3xl font-bold pb-3"
+              <span>NASA Mars Rovers</span>
+              <a class="pl-1 inline-block text-xs font-light underline text-gray-400" href="https://mars.nasa.gov/mer/" class="text-xs">Detail</a>
+            </h1>
+            <dl>
+              <dt class="text-xs">Total</dt>
+              <dd class="text-3xl font-bold">3</dd>
+            </dl>
+          </div>
+          <div class="flex flex-row flex-wrap">
+            ${Rovers(state)}
+          </div>
         </main>
-        <footer>© Young Bae, 2021</footer>
+        <footer class="text-xs p-5 text-purple-300 flex justify-between">
+          <span>© Young Bae, 2021</span>
+          <span>Made with API by <a href="https://api.nasa.gov/"><img class="w-10 inline-block" src="./assets/images/nasa-logo-web-rgb.png" /></a></span>
+        </footer>
     `;
 };
 

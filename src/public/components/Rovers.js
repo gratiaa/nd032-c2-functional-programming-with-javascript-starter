@@ -9,16 +9,18 @@ const Rovers = (state) => {
       console.log(recentPhotos);
 
       return `
-      <dl>
-        <dd>name</dd>
-        <dt>${name}</dt>
-        <dd>Launch Date</dd>
-        <dt>${launchDate}</dt>
-        <dd>Landing Date</dd>
-        <dt>${landingDate}</dt>
-        <dd>status</dd>
-        <dt>${status}</dt>
-      </dl>
+      <a href="#" class="rover_card flex flex-col p-4 pr-10">
+        <dl>
+          <dd class="text-xs text-gray-400 font-light">Name</dd>
+          <dt class="text-lg pb-2">${name}</dt>
+          <dd class="text-xs text-gray-400 font-light">Launch Date</dd>
+          <dt class="text-lg pb-2">${launchDate}</dt>
+          <dd class="text-xs text-gray-400 font-light">Landing Date</dd>
+          <dt class="text-lg pb-2">${landingDate}</dt>
+          <dd class="text-xs text-gray-400 font-light">Status</dd>
+          <dt class="text-lg pb-2">${status.toUpperCase()}</dt>
+        </dl>
+      </a>
   `;
     })
     .join("")}`;
