@@ -6,6 +6,8 @@ import Rovers from "./components/Rovers.js";
 const root = document.getElementById("root");
 
 const updateStore = (store, newState) => {
+  console.log(store, newState);
+
   const nextStore = Immutable.Map(Object.assign(store, newState));
 
   if (Immutable.is(store, nextStore)) {
@@ -19,6 +21,20 @@ const updateStore = (store, newState) => {
 
 const render = async (root, state) => {
   root.innerHTML = await App(state);
+
+  const rovers = state.rovers.map(({ name }) => name);
+
+  rovers.map((rover) => {
+    const btnCloseDetail = document.getElementById(`${rover}_details_close`);
+
+    if (!btnCloseDetail) {
+      return;
+    }
+
+    btnCloseDetail.addEventListener("click", () => {
+      document.getElementById(`${rover}_details_summary`).click();
+    });
+  });
 };
 
 const App = async (state) => {
@@ -42,7 +58,7 @@ const App = async (state) => {
             </dl>
           </div>
           <div class="flex flex-row flex-wrap">
-            ${Rovers(state)}
+            ${Rovers(state, updateStore)}
           </div>
         </main>
         <footer class="text-xs p-5 text-purple-300 flex justify-between">
