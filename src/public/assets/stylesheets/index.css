@@ -13,9 +13,11 @@ body {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: #fff;
   width: 100%;
+  background-color: rgba(255, 75, 186, 0.4);
   background-image: url("../images/ferenc-horvath-skcFiBu91AA-unsplash.jpg");
   background-size: cover;
   background-position: center;
+  background-blend-mode: lighten;
   display: flex;
   justify-content: center;
   align-items: center;

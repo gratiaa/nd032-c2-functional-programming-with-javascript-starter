@@ -50,7 +50,7 @@ const App = async (state) => {
           <div class="pb-32">
             <h1 class="text-3xl font-bold pb-3"
               <span>NASA Mars Rovers</span>
-              <a class="pl-1 inline-block text-xs font-light underline text-gray-400" href="https://mars.nasa.gov/mer/" class="text-xs">Detail</a>
+              <a class="pl-1 inline-block text-xs font-light underline text-gray-400" href="https://mars.nasa.gov/mer/" class="text-xs" target="_blank">Detail</a>
             </h1>
             <dl>
               <dt class="text-xs">Total</dt>
