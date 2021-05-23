@@ -1,8 +1,10 @@
 const API = {
   marsRover: (rover) =>
-    `http://localhost:3000/mars-rover/${rover.toLowerCase()}`,
+    `http://${location.host}/mars-rover/${rover.toLowerCase()}`,
   marsRoverPhotos: (rover, sol) =>
-    `http://localhost:3000/mars-rover/${rover.toLowerCase()}/photos?sol=${sol}`,
+    `http://${
+      location.host
+    }/mars-rover/${rover.toLowerCase()}/photos?sol=${sol}`,
 };
 
 const fetchMarsRovers = async (state) =>
