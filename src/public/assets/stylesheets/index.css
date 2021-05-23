@@ -93,7 +93,7 @@ main {
   }
 
   .rover {
-    flex-basis: auto;
+    flex-basis: 31%;
   }
 
   .rover + .rover {
